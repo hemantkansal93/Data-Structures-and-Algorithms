@@ -14,7 +14,7 @@ public class Test {
         System.out.println(getVal(hm, 25));
 	}
 	
-	public static int getVal(HashMap hm, int val) {
+	public static int getVal(HashMap<Integer, Integer>  hm, int val) {
 		return (int) hm.get(val);
 	}
 
