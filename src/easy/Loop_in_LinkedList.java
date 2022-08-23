@@ -2,8 +2,6 @@ package easy;
 
 import java.util.HashSet;
 
-import easy.Palindrome_LinkedLlist.ListNode;
-
 public class Loop_in_LinkedList {
 
 	static class ListNode {

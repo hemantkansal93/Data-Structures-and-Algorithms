@@ -1,7 +1,5 @@
 package easy;
 
-import easy.IntersectingNode_LinkedList.ListNode;
-
 public class ReverseLinkedList {
 	static class ListNode {
 		int data;
