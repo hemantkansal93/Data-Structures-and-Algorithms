@@ -1,7 +1,19 @@
 package medium;
 
-public class Flood_Fill {
+import java.util.LinkedList;
+import java.util.Queue;
 
+public class Flood_Fill_BFS {
+
+	static class Ele{
+		int x;
+		int y;
+		
+		public Ele(int x, int y) {
+			this.x = x;
+			this.y = y;
+		}
+	}
 	public static void main(String[] args) {
 		int[][] image = {{1,1,1},{0,1,0},{1,0,1}};
 
@@ -31,30 +43,25 @@ public class Flood_Fill {
 
 	private static void floodFill(int[][] image, int sr, int sc, int color) {
 		int prevColor = image[sr][sc];
-		
 		if(prevColor == color) {
 			return;
 		}
-		fill(image, sr,sc, prevColor, color);
-	}
-
-//	USING RECURSION
-	private static void fill(int[][] image, int sr, int sc, int prevColor, int newColor) {
-		if(image[sr][sc] != prevColor)
-			return;
-		image[sr][sc] = newColor;
+		Queue<Ele> q = new LinkedList<>();
+		q.add(new Ele(sr,sc));
 		
-		int[] directions = {-1,0,1,0,-1};
-		
-		for( int i = 0 ; i < 4; i++) {
-			int r  = sr + directions[i];
-			int c  = sc + directions[i+1];
+		while(!q.isEmpty()) {
+			Ele e= q.remove();
+			image[e.x][e.y] = color;
 			
-			if(r >=0  && r<image.length && c>=0 && c < image[0].length) {
-				fill(image, r,c,prevColor, newColor);
+			int[] directions = {-1,0,1,0,-1};
+			
+			for( int i = 0 ; i < 4; i++) {
+				int r  = e.x + directions[i];
+				int c  = e.y + directions[i+1];
+				
+				if(r >=0  && r<image.length && c>=0 && c < image[0].length && image[r][c] == prevColor)
+					q.add(new Ele(r,c));
 			}
 		}
-		
 	}
-
 }
