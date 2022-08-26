@@ -31,5 +31,4 @@ public class Longest_Consecutive_Subsequence {
 		}
 		return length;
 	}
-
 }
