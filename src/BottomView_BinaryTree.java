@@ -27,15 +27,15 @@ class NodeCoord{
 }
 
 
-public class BottomViewBinaryTree {
+public class BottomView_BinaryTree {
 
 	 Node root; //root node of tree
 	  
 	    // Default constructor
-	    public BottomViewBinaryTree() {}
+	    public BottomView_BinaryTree() {}
 	  
 	    // Parameterized tree constructor
-	    public BottomViewBinaryTree(Node node)
+	    public BottomView_BinaryTree(Node node)
 	    {
 	        root = node;
 	    }
@@ -52,7 +52,7 @@ public class BottomViewBinaryTree {
 	        root.right.right = new Node(25);
 	        root.left.right.left = new Node(10);
 	        root.left.right.right = new Node(14);
-	        BottomViewBinaryTree tree = new BottomViewBinaryTree(root);
+	        BottomView_BinaryTree tree = new BottomView_BinaryTree(root);
 	        System.out.println("Bottom view of the given binary tree:");
 //	        List<Integer> res = tree.bottomView(root);
 	        List<Integer> res = tree.topView(root);
